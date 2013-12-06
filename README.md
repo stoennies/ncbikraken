@@ -6,7 +6,7 @@ This project will provide a Java toolset for downloading and handling NCBI data.
 MEDLINE/PubMed License
 ======================
 
-To be able to use the script to download the baseline data, you need to have a license from NIH. You can request it here:
+To be able to download the baseline data, you need to have a license from NIH. You can request it here:
 
     http://www.nlm.nih.gov/databases/license/license.html
 
