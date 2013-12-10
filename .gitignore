@@ -1,2 +1,3 @@
 target/
 /mail.properties
+/runningConfig.properties
