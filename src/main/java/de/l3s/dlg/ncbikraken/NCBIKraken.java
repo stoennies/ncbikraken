@@ -24,6 +24,7 @@ public class NCBIKraken extends CommandLineProgram {
     }
 
 	/**
+	 * Just test
 	 * @param args
 	 */
 	public static void main(String[] args) {
