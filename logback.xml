@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property file="mail.properties" />
+
+	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+		<smtpHost>${SMTPHOST}</smtpHost>
+		<smtpPort>${SMTPPORT}</smtpPort>
+		<STARTTLS>true</STARTTLS>
+		<username>${SMTPUSERNAME}</username>
+		<password>${SMTPPASSWORD}</password>
+		<to>${LOGRECIEVER}</to>
+		<from>${LOGSENDER}</from>
+		<subject>Error: %logger{20} - %m</subject>
+		<layout class="ch.qos.logback.classic.html.HTMLLayout" />
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<root level="TRACE">
+		<appender-ref ref="EMAIL" />
+        <appender-ref ref="STDOUT" />
+	</root>
+</configuration>
